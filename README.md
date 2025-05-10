@@ -1015,5 +1015,345 @@ Query (5, 5): The neighbors of node 5 are [1, 2, 3, 4]. There are only 4 neighbo
 Query (3, 4): The neighbors of node 3 are [1, 2, 4, 5]. Sorted: [1, 2, 4, 5]. The 4th smallest is 5. Output: 5.
 Query (5, 2): The neighbors of node 5 are [1, 2, 3, 4]. Sorted: [1, 2, 3, 4]. The 2nd smallest is 2. Output: 2.
 
+----------------------------------------------------------LAB - 05----------------------------------------------------------------------
+
+A - Can you Traverse-1?
+[Time limit per test5 seconds
+memory limit per test256 megabytes]
+
+You are given an undirected unweighted graph with N cities and M roads. The cities are numbered from 1 to N. You may assume, the graph is connected, meaning there is a path between any pair of cities. There are no self-loops (no road connects a city to itself) and no multiple edges between the same pair of cities.
+Your task is to perform a Breadth-First Search (BFS) starting from node 1 and print the order in which the nodes are visited.
+
+Input:
+The first line contains two integers N and M (1≤N≤2×10^5,1≤M≤3×10^5) — the number of cities and the total number of roads.
+
+The next M lines will contain two integers ui,vi(1≤ui,vi≤N) — denoting there is an edge between city ui and city vi.
+
+Output:
+Print the BFS traversal starting from node 1 as a space-separated list of visited nodes. If there are multiple BFS path traversal order, you may print any.
+
+Examples:
+Input:
+4 3
+1 4
+3 2
+1 3
+Output:
+1 3 4 2
+Input:
+6 10
+3 1
+1 6
+6 4
+4 5
+5 2
+6 2
+4 3
+5 6
+3 6
+1 5
+Output:
+1 3 5 6 4 2
+Input:
+4 5
+1 3
+3 4
+4 2
+3 2
+1 4
+Output:
+1 3 4 2
+
+
+
+
+
+B - Can you Traverse-2?
+[Time limit per test1 second
+memory limit per test1024 megabytes]
+
+You are given an undirected unweighted graph with N cities and M roads. The cities are numbered from 1 to N. The graph is connected, and contains no self-loops or multiple edges.
+
+Your task is to perform a Depth-First Search (DFS) starting from node 1 and print the order in which the nodes are visited.
+
+Input:
+The first line contains two integers N and M (1≤N≤2×105,1≤M≤3×105) — the number of cities and the total number of roads.
+
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is other endpoint of the 
+i-th edge.
+
+The i-th edge of this graph is between the i-th node in the second line and the i-th node in the third line.
+
+Output:
+Print the DFS traversal starting from node 1 as a space-separated list of visited nodes. If there are multiple DFS path traversal order, you may print any.
+
+Examples:
+Input:
+4 3
+1 3 1
+4 2 3
+Output:
+1 3 2 4 
+Input:
+6 8
+1 5 3 4 6 1 6 4
+5 3 4 6 2 3 3 1
+Output:
+1 3 4 6 2 5 
+Input:
+5 7
+5 1 3 2 4 4 4
+1 3 2 4 1 3 5
+Output:
+1 3 2 4 5 
+
+
+
+
+
+C - Lightning McQueen
+[Time limit per test1 second
+memory limit per test256 megabytes]
+You are given an undirected unweighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self loops or multiple edges.
+
+There is a source and a destination. Your task is to find the shortest distance from the source node to destination node and print the path taken. If multiple shortest paths exist, print the one that is lexicographically smallest.
+
+A path P1=[a1,a2,…an] is lexicographically smaller than a path P2=[b1,b2,…bm] if at the first position where they differ, ai<bi. For example, [1,4,3] is smaller than [1,5,7,1].
+If no path exists, print −1.
+
+Input:
+The first line contains four integers N,M,S,D (1≤N≤2×10^5,0≤M≤3×10^5,1≤S, D≤N) — the number of vertices, total number of edges, source and destination.
+
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is other endpoint of the i-th edge.
+
+The i-th edge of this graph is between the i-th node in the second line and the i-th node in the third line.
+
+Output:
+If a path exists, print the length of the shortest path (number of edges) on the first line.
+On the second line, print the lexicographically smallest shortest path from source to destination.
+If no path exists, print -1.
+
+Examples:
+Input:
+5 10 5 3
+2 1 5 3 1 4 2 4 1 4
+5 5 4 5 2 2 3 1 3 3
+Output:
+1
+5 3
+Input:
+5 4 2 5
+5 1 2 4
+1 3 3 2
+Output:
+3
+2 3 1 5
+Input:
+8 7 3 2
+7 7 3 2 2 8 5
+2 6 7 4 1 4 1
+Output:
+2
+3 7 2
+Input:
+6 6 6 5
+1 2 1 5 5 3
+5 1 4 2 4 2
+Output:
+-1
+Input:
+1 0 1 1
+
+
+Output:
+0
+1
+
+
+
+
+
+D - Through the Jungle
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed unweighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self loops or multiple edges.
+
+You have to find a shortest path from node S to node D that passes through node K. If multiple such paths exist, print any one of them. If no such path exists, print −1.
+
+Input:
+The first line contains five integers N,M,S,D,K (1≤N≤2×10^5,1≤M≤3×10^5,1≤S, D,K≤N) — the number of vertices, total number of edges, source, destination and the mandatory node that must be included in the path.
+
+The next M lines will contain two integers ui,vi(1≤ui,vi≤N) — denoting there is an edge from city ui to city vi.
+
+Output:
+If a valid path exists from S to D through K, print the length of the path (number of edges) on the first line.
+On the second line, print the nodes in the path in order from S to D.
+If no such path exists, print −1.
+
+Examples:
+Input:
+5 10 5 3 5
+2 5
+5 1
+4 5
+3 5
+1 2
+2 4
+3 2
+1 4
+1 3
+3 4
+Output:
+2
+5 1 3
+Input:
+5 4 2 5 3
+5 1
+3 1
+2 3
+2 4
+Output:
+-1
+Input:
+8 7 3 2 4
+7 2
+6 7
+7 3
+2 4
+1 2
+8 4
+5 1
+Output:
+-1
+Input:
+6 6 2 2 2
+5 1
+1 2
+1 4
+5 2
+4 5
+3 2
+Output:
+0
+2
+
+
+
+
+
+E - Cycle Detection
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed unweighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges.
+
+Write a code to find if there is any cycle in the graph. In graph theory, a cycle in a graph is a non-empty trail in which only the first and last vertices are equal.
+
+Input:
+The first line contains four integers N and M (1≤N≤2×10^5,1≤M≤2×10^5) — the number of vertices and total number of edges.
+The next M lines will contain two integers ui,vi(1≤ui,vi≤N) — denoting there is an edge from city ui to city vi.
+
+Output:
+Print YES if the graph contains any cycle, otherwise print NO.
+
+Examples:
+Input:
+4 7
+1 3
+1 2
+2 4
+3 1
+2 3
+4 3
+4 1
+Output:
+YES
+Input:
+6 5
+6 4
+6 3
+4 5
+6 2
+4 1
+Output:
+NO
+
+
+
+
+
+F - Diamonds under W
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a 2D grid with R rows and H columns.
+
+Each cell in the grid is one of the following:
+.— Empty cell: You can move into this cell.
+D— Cell with a diamond: You can move into this cell and collect the diamond.
+#— Obstacle: You cannot move into this cell.
+
+You may start from any non-obstacle cell and move in the four directions: up, down, left, or right. Your goal is to choose a starting cell such that you can collect the maximum number of diamonds
+
+Input:
+The first line contains two integers R and H (1≤R,H≤1000)— the number of rows and columns of the grid. The next Rlines each contain H characters, describing the grid.
+
+Output:
+Print a single integer — the maximum number of diamonds you can collect starting from a valid cell.
+
+Examples:
+Input:
+5 5
+.#.DD
+##.#.
+####D
+#DDD#
+#..DD
+Output:
+5
+Input:
+5 5
+D####
+##.D#
+#..D#
+###D#
+..##D
+Output:
+3
+Input:
+5 5
+.....
+####.
+#..#.
+####.
+.....
+Output:
+0
+Input:
+1 5
+D....
+Output:
+1
+Input:
+9 11
+.#..D...D..
+.#.#######.
+D#.#..D..#.
+D#D#.###.#D
+.#.#..D#.#.
+.#.#####.#D
+D#..D...D#.
+.#########.
+...D..D...D
+Output:
+15
+
+
+
 
 
