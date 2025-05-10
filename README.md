@@ -66,6 +66,7 @@ Output:
 
 
 
+
 C - Array Reverse 
 You are given an array of N integers. Your task is to reverse the array and print the last K integers from the reversed array.
 Input:
@@ -89,4 +90,103 @@ Output2:
 
 
 
-D
+D - Fast Sum
+Your friend is trying to solve the following problem. You are given T test cases. For each test case, you are given an integer N. You have to find out the summation of 1 to N. Your friend wrote the following Python code to solve it:
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    sum = 0
+    for i in range(1, N + 1):
+        sum += i
+    print(sum)
+
+However, the code is not passing the online judge due to some unknown errors for large values of N.
+Since you are currently studying CSE221 and have learned about time complexity, help your friend come up with a more efficient solution.
+
+Input:
+The first line contains a single integer T(1≤T≤10^4) — the number of test cases. The next T lines each contain a single integer N(1≤N≤10^6).
+Output:
+For each test case, print a single integer — the summation from 1 to N.
+Examples:
+Input:                           Output:
+5                                3
+2                                15
+5                                55
+10                               78
+12                               5050                          
+100
+
+
+
+
+
+E - Bubble Sort? 
+Here is the code of bubble sort. Its run time complexity is θ(n^2). Change the code in a way so that its time complexity is θ(n) for the best-case scenario. You are not allowed to use any builtin sort function to solve this problem.
+
+def bubbleSort(arr):                                                    
+    for i in range(len(arr)-1):
+        for j in range(len(arr)-i-1): 
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+Input:
+In the first line, you will be given 
+N(1≤N≤10^5). Then you will be given an array 
+a of N integers (1≤ai≤10^9) that you have to sort in increasing order. It is guaranteed that if the original input array is not in the best case scenario, 1≤N≤1000.
+Output:
+Output the sorted array (Please see the sample output for reference)
+Examples:
+Input1:
+5
+3 2 1 4 5
+Output1:
+1 2 3 4 5 
+Input2:
+6
+5 10 15 20 25 30
+Output2:
+5 10 15 20 25 30 
+
+
+
+
+
+F - Sorting Again?? 
+Suppose you are given a task to rank the students. You have gotten the marks and ID of the students. Now your task is to rank the students based on their marks using a sorting algorithm. If two or more students get the same mark, then students with the lower ID will get prioritized. See the input and output for a better understanding.
+However, you have to keep in mind that your sorting algorithms perform the minimum number of swapping operations.
+
+Input:
+The first line of the input file will contain an integer N(1≤N≤1000). The second line will contain N integers, representing the Student ID, Si(1≤ Si ≤1000). The next line will contain the N integers, Sm(1≤Sm≤1000), which denotes the obtained mark of the corresponding students.
+Note: It is guaranteed that the student IDs are unique. 
+
+Output:
+The first line of the output must contain a number X which denotes the number of minimum swaps. The rest of the N lines will contain the Student ID and obtained marks sorted based on the instruction above. See the sample output for a better understanding.
+Important Note: Since you are asked to minimize the number of swaps, if your number of swaps doesn't match with the judge's answer, your solution will be considered incorrect.
+Look at the first sample input. It can be shown that this can be sorted with only 4 swaps. It can also be shown that it is not possible to sort this in less than 4 swaps.
+
+Examples:
+Input1:
+7
+7 4 9 3 2 5 1
+40 50 50 20 10 10 10
+Output1:
+Minimum swaps: 4
+ID: 4 Mark: 50
+ID: 9 Mark: 50
+ID: 7 Mark: 40
+ID: 3 Mark: 20
+ID: 1 Mark: 10
+ID: 2 Mark: 10
+ID: 5 Mark: 10
+Input2:
+4
+7 2 5 3
+80 60 80 50
+Output2:
+Minimum swaps: 2
+ID: 5 Mark: 80
+ID: 7 Mark: 80
+ID: 2 Mark: 60
+ID: 3 Mark: 50
