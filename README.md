@@ -678,9 +678,342 @@ Output:
 
 ----------------------------------------------------------LAB - 04----------------------------------------------------------------------
 
+A - Adjacency Matrix Representation
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. Each edge represents a direct connection between two nodes. There is no self loop or multi edge.
+
+Input:
+The first line contains two integers N and M (1≤N≤100,0≤M≤N(N−1)2) — the number of vertices and the total number of edges.
+The next M lines will contain three integers ui,vi,wi(1≤ui,vi≤N,1≤wi≤1000) — denoting there is an edge from node ui to vi with cost wi.
+
+Output:
+The output consists of an N×N adjacency matrix representing the directed weighted graph. Each row corresponds to a node, and each column represents its directed edges to other nodes. The value at position (i,j) denotes the weight of the edge from node i to node j. If there is no edge, the value is 0.
+
+Examples:
+Input:
+6 7
+1 5 6
+6 3 5
+1 3 9
+3 4 7
+4 6 1
+5 6 8
+6 1 6
+Output:
+0 0 9 0 6 0 
+0 0 0 0 0 0 
+0 0 0 7 0 0 
+0 0 0 0 0 1 
+0 0 0 0 0 8 
+6 0 5 0 0 0 
+
+Input:
+4 3
+1 3 8
+3 2 5
+1 4 2
+Output:
+0 0 8 2 
+0 0 0 0 
+0 5 0 0 
+0 0 0 0 
 
 
 
+
+
+B - Adjacency List Representation
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. Each edge represents a direct connection between two nodes. There is no self loop or multi edge.
+
+Input:
+The first line contains two integers N and M (1≤N≤100,0≤M≤N(N−1)2) — the number of vertices and the total number of edges.
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is other endpoint of the i-th edge.
+Thr fourth line contains M integers w1,w2,w3…wm (1≤wi≤1000) — where the i-th integer represents the weight of the i-th edge.
+The i'th edge of this graph is from the i'th node in the second line to the i'th node in the third line, their weight is the i'th value in the fourth line.
+
+Output:
+For the given input, the output should be the Adjacency List representation of the graph as shown in the sample output.
+
+Examples:
+Input:
+4 5
+4 1 4 3 3
+3 2 2 2 1
+4 4 10 8 5
+Output:
+1: (2,4)
+2:
+3: (2,8) (1,5)
+4: (3,4) (2,10)
+Input:
+4 4
+3 3 2 4
+2 1 1 3
+9 5 8 10
+Output:
+1:
+2: (1,8)
+3: (2,9) (1,5)
+4: (3,10)
+
+
+
+
+
+C - Graph Metamorphosis
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed unweighted graph with N nodes in an adjacency list format. The nodes are numbered from 0 to N-1. Your task is to convert it into an adjacency matrix representation.
+
+Input:
+The first line contains a integer N (1≤N≤100) — the number of vertices.
+The next N lines describe the adjacency list:
+The i-th line starts with an integer k, indicating the number of nodes adjacent to node i.
+The next k space-separated integers represent the nodes adjacent to node i.
+Nodes are numbered from 0 to N-1.
+
+Output:
+Print an N×N adjacency matrix, where the cell at row i and column j
+1 if there is an edge between nodes i and j
+0 otherwise.
+
+Examples:
+Input:
+5
+2 1 2
+1 0
+1 0
+1 4
+1 3
+Output:
+0 1 1 0 0 
+1 0 0 0 0 
+1 0 0 0 0 
+0 0 0 0 1 
+0 0 0 1 0 
+Input:
+5
+0
+2 2 3
+3 1 3 4
+2 1 2
+1 2
+Output:
+0 0 0 0 0 
+0 0 1 1 0 
+0 1 0 1 1 
+0 1 1 0 0 
+0 0 1 0 0 
+
+
+
+
+
+D - The Seven Bridges of Königsberg
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given an undirected unweighted connected graph with N nodes and M edges. There can be self loop or multiple edges. Your task is to determine whether an Eulerian Path exists in the graph.
+In graph theory, an Eulerian path (also called an Eulerian trail or Eulerian walk) is a path in a graph that visits every edge exactly once and may start and end at different vertices. However, a vertex can be visited multiple times.
+
+Input:
+The first line contains two integers N and M (1≤N≤2×105,0≤M≤3×105) — the number of vertices and the total number of edges.
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is other endpoint of the i-th edge.
+The i'th edge of this graph is between the i'th node in the second line and the i'th node in the third line.
+
+Output:
+If an Eulerian Path exists, print YES. Otherwise, print NO.
+
+Examples:
+Input:
+5 10
+5 5 5 2 2 2 3 3 4 2
+2 3 1 3 4 1 4 1 2 4
+Output:
+YES
+Input:
+5 4
+1 4 3 2
+4 3 2 5
+Output:
+YES
+Input:
+8 7
+4 4 6 6 3 1 8
+6 5 3 2 7 8 7
+Output:
+NO
+Input:
+7 6
+3 5 7 6 4 2
+5 7 6 4 2 1
+Output:
+YES
+
+
+
+
+
+E - Edge Queries
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given a directed unweighted graph with N nodes and M edges. The nodes are numbered from 1 to N. Your task is to find the difference of indegree and outdegree of each node in the graph.
+
+Input:
+The first line contains two integers N and M (1≤N≤2×105,0≤M≤3×105) — the number of vertices and the total number of edges.
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is other endpoint of the i-thedge.
+The i-th edge of this graph is from the i-th node in the second line to the i-th node in the third line.
+
+Output:
+Output a single line with N space-separated integers, where the i-th integer is the difference of indegree and outdegree of node i.
+
+Examples:
+Input:
+5 10
+2 5 4 3 2 4 3 4 1 3
+5 1 5 5 1 2 2 1 3 4
+Output:
+2 0 -2 -2 2
+Input:
+5 4
+5 3 3 2
+1 1 2 4
+Output:
+2 0 -2 1 -1
+Input:
+8 7
+7 7 7 2 1 4 1
+2 6 3 4 2 8 5
+Output:
+-2 1 1 0 1 1 -3 1
+
+
+
+
+
+F - The King of Königsberg
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given an N∗N chessboard and the initial position (x,y) of a King piece. The King can move one step in any of the 8 possible directions: Up, Down, Left, Right, Top-left diagonal, Top-right diagonal, Bottom-left diagonal, Bottom-right diagonal.
+Your task is to determine the number of valid moves the King can make in one move. A move is valid if it remains inside the board.
+
+Input:
+The first line contains an integer (1≤N≤2×105) — the size of the chessboard.
+The second line contains two integers (1≤x,y≤N) — the initial position of the King on the chessboard.
+
+Output:
+First, print an integer K — the number valid moves the King can make in one move.
+Next, print K lines, each containing two integers representing a valid move in ascending order. A move (a,b) is smaller than (c,d) if a<c or if a=c and b<.
+
+Examples:
+Input:
+8
+1 1
+Output:
+3
+1 2
+2 1
+2 2
+Input:
+8
+1 2
+Output:
+5
+1 1
+1 3
+2 1
+2 2
+2 3
+Input:
+8
+2 2
+Output:
+8
+1 1
+1 2
+1 3
+2 1
+2 3
+3 1
+3 2
+3 3
+
+
+
+
+
+G. Coprime Graph
+[Time limit per test2 seconds
+memory limit per test256 megabytes]
+
+You are given an integer N. Construct an undirected graph with N nodes, where each node i is connected to all node j such that gcd(i,j)=1 where 1≤i,j≤N and i≠j.
+
+For example,for N=6, the graph will be, G= [[2,3,4,5,6], [1,3,5], [1,2,4,5], [1,3,5], [1,2,3,4,6], [1,5]].
+
+Now, there will be Q queries. Each query consists of two integers X and K. For each query, you have to determine the K−th smallestnode connected to node X.
+
+Input:
+The first line contains two integers N and Q (1≤N≤2×103,1≤Q≤3×105) — the number of vertices and the total number of queries.
+The next Q lines contain two integers X and K (1≤X≤N,1≤K≤106), representing a query.
+
+Output:
+For each query, output the K−th smallest node connected to node X. If there are fewer than K neighbors of X, then print -1.
+
+Examples:
+Input:
+5 6
+1 3
+3 1
+4 2
+5 5
+3 4
+5 2
+Output:
+4
+1
+3
+-1
+5
+2
+Input:
+2000 3
+903 24
+702 563
+942 50
+Output:
+41
+1829
+149
+Input:
+1 1
+1 1
+Output:
+-1
+Input:
+2 1
+2 1
+Output:
+1
+
+Note:
+Explanation of the First Sample (Let's go through the queries):
+Query (1, 3): The neighbors of node 1 are [2, 3, 4, 5]. Sorted: [2, 3, 4, 5]. The 3rd smallest is 4. Output: 4.
+Query (3, 1): The neighbors of node 3 are [1, 2, 4, 5]. Sorted: [1, 2, 4, 5]. The 1st smallest is 1. Output: 1.
+Query (4, 2): The neighbors of node 4 are [1, 3, 5]. Sorted: [1, 3, 5]. The 2nd smallest is 3. Output: 3.
+Query (5, 5): The neighbors of node 5 are [1, 2, 3, 4]. There are only 4 neighbors, so the 5th smallest does not exist. Output: -1.
+Query (3, 4): The neighbors of node 3 are [1, 2, 4, 5]. Sorted: [1, 2, 4, 5]. The 4th smallest is 5. Output: 5.
+Query (5, 2): The neighbors of node 5 are [1, 2, 3, 4]. Sorted: [1, 2, 3, 4]. The 2nd smallest is 2. Output: 2.
 
 
 
