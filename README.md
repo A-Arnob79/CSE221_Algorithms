@@ -30,6 +30,7 @@ Output
 For each test case, you have to print the result. Look at the sample output for reference.
 
 Important Note: Your answer might contain floating point numbers, and in that case, your answer doesn't have to be exactly equal to the actual answer. For example, if your answer is 20.250000001 and the judge's solution is 20.25, your answer will still be considered correct. As long as it is really close to the correct solution, your solution will be considered correct. Formally speaking, if your solution is x, and the judge's solution is y, then as long as ∣x−y∣≤10^−6, your solution will be correct. In the above example, your solution was 20.250000001 and the judge's solution was 20.25. If you take the difference of these two numbers,  they are smaller than 10^−6. Similarly, if the judge's solution is 19.0000000000 and your solution is 19, it is still correct, as the difference is 0, which is less than 10^−6.
+
 Examples:
 Input:
 15
@@ -1353,7 +1354,7 @@ D#..D...D#.
 Output:
 15
 
-----------------------------------------------------------LAB - 05----------------------------------------------------------------------
+----------------------------------------------------------LAB - 06----------------------------------------------------------------------
 
 A - Advising
 [Time limit per test1 second
@@ -1735,6 +1736,330 @@ ac
 Output:
 -1
 
-----------------------------------------------------------LAB - 05----------------------------------------------------------------------
+----------------------------------------------------------LAB - 07----------------------------------------------------------------------
+
+A - Shortest Path
+[Time limit per test1 second
+memory limit per test1024 megabytes]
+
+You are given an directed weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges.
+There is a source and a destination. Your task is to find the shortest distance from the source node to the destination node and print the path taken. If multiple shortest paths exist, print any one of them. If no such path exists, print −1.
+
+Input:
+The first line contains four integers N,M,S,D(2≤N≤2×10^5,1≤M≤3×10^5,1≤S,D≤N) — the number of vertices, total number of edges, source and destination.
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is the other endpoint of the i-th edge.
+The fourth line contains M integers w1,w2,w3…wm (1≤wi≤106) — where the i-th integer represents the weight of the i-th edge.
+The i-th edge of this graph is from the i-th node in the second line to the i-th node in the third line.
+
+Output:
+If a valid path exists from S to D, print the shortest distance S to D on the first line.
+On the second line, print the nodes in the path in order from S to D. If multiple shortest paths exist, print any one of them.
+If no such path exists, print −1.
+
+Examples:
+Input:
+4 3 4 2
+1 3 4
+2 2 3
+3 4 5
+Output:
+9
+4 3 2
+
+Input:
+6 5 1 5
+1 4 1 6 4
+2 1 6 2 6
+3 3 4 3 4
+Output:
+-1
+
+Input:
+2 1 2 1
+2
+1
+7
+Output:
+7
+2 1
+
+Input:
+5 7 2 4
+1 1 5 4 2 3 2
+5 4 3 5 5 4 3
+3 8 2 6 6 4 3
+Output:
+7
+2 3 4
 
 
+
+
+
+B - Where to Meet?
+[Time limit per test2 seconds
+memory limit per test1024 megabytes]
+
+Alice and Bob are in a hurry to meet each other and have to traverse through a directed graph with weighted edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges. Alice starts from node S and Bob starts from node T. They want to find a common node in the graph where they can meet each other in the minimum amount of time. Alice or Bob can wait at any node if they want to.
+
+Input:
+The first line contains four integers N,M,S,T(2≤N≤2×105,1≤M≤3×105,1≤S,T≤N) — the number of vertices, the total number of edges, the starting node of Alice, and the starting node of Bob. The next M lines will contain three integers ui,vi,wi(1≤ui,vi≤N,1≤wi≤106) — there is a edge from the node ui to the node vi with a weight wi.
+
+Output:
+Print two integers separated by a space: the minimum time required for Alice and Bob to meet, and the node where they meet. If there are multiple such nodes, print the smallest node. If no such node exists, print −1.
+
+Examples:
+Input:
+5 5 1 5
+1 2 1
+2 3 1
+5 3 2
+1 4 2
+5 4 2
+Output:
+2 3
+Input:
+6 5 1 5
+1 2 3
+4 1 3
+1 6 4
+6 2 3
+4 6 4
+Output:
+-1
+Input:
+2 1 2 2
+2 1 7
+Output:
+0 2
+Input:
+5 7 2 5
+1 5 3
+1 4 8
+5 3 2
+4 5 6
+2 5 6
+3 4 4
+2 3 3
+Output:
+3 3
+
+
+
+
+
+C - Minimize the Danger
+[Time limit per test2 seconds
+memory limit per test1024 megabytes]
+
+You are in a city with N cities connected by M bi-directional roads. Each road has a danger level, where a higher number means the road is more dangerous.
+You start in city 1 and need to go to every other city. The goal is to find the minimum danger level you would face to reach each city from city 1. The danger of a path is defined as the highest danger level of any road on that path.
+
+For each city, find the minimum danger level of the path from city 1. If a city is not reachable from city 1, print −1. The danger of reaching city 1 is always 0.
+
+Input:
+The first line contains two integers N,M(2≤N≤2⋅10^5,1≤M≤3⋅10^5) — the number of cities, the total number of roads.
+
+The next M lines will contain three integers ui,vi,wi(1≤ui,vi≤N,1≤wi≤106) — node ui is connected to node vi with a weight wi.
+
+Output:
+Output n integers, where i-th integer represents the minimum danger level you'd have to face in order to go from city 1 to city i.
+
+Examples:
+Input:
+4 3
+2 1 3
+2 3 5
+3 4 3
+Output:
+0 3 5 5
+Input:
+6 5
+1 2 3
+1 4 5
+1 6 2
+2 6 3
+4 6 1
+Output:
+0 3 -1 2 -1 2
+Input:
+2 1
+2 1 5
+Output:
+0 5
+Input:
+5 7
+1 5 3
+1 4 2
+5 3 1
+5 4 6
+5 2 5
+3 4 4
+3 2 8
+Output:
+0 5 3 2 3
+
+
+
+
+
+D - Beautiful Path
+[Time limit per test2 seconds
+memory limit per test1024 megabytes]
+
+You are given an directed graph with N nodes and M edges. The graph contains no self-loops or multiple edges. The edges have no weight. The nodes are numbered from 1 to N and have a weight. You need to find the cost of a path, if there is any, from node S to node D with the minimum cost. The cost of a path is the sum of the weights of the nodes in that path.
+
+Input:
+The first line contains four integers N,M,S,D(2≤N≤2×105,1≤M≤3×105,1≤S,D≤N) — the number of vertices, total number of edges, source, and destination.
+In the next line, there will be N integers w1,w2,w3…wn (1≤wi≤10^6) separated by spaces – representing the weights of each node.
+The next M lines will contain two integers ui,vi(1≤ui,vi≤N) — there is an edge from the node ui to the node vi.
+
+Output:
+If a valid path exists from S to D, print the minimum cost of the path. Otherwise, print −1.
+
+Examples:
+Input;
+4 3 1 2
+3 4 5 4
+1 2
+3 2
+4 3
+Output:
+7
+Input:
+6 5 5 3
+3 3 4 3 4 1
+1 2
+4 1
+1 6
+6 2
+4 6
+Output:
+-1
+Input:
+2 1 1 1
+7 6
+2 1
+Output:
+7
+Input:
+5 7 3 5
+3 8 2 6 6
+1 5
+1 4
+5 3
+4 5
+2 5
+3 4
+2 3
+Output:
+14
+
+
+
+
+
+E - Parity Edges
+[Time limit per test1.5 seconds
+memory limit per test1024 megabytes]
+
+You are given a directed weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges.
+Your task is to find the shortest distance from node 1 to node N, with an additional constraint: the path cannot contain two consecutive edges with the same parity (i.e., both even or both odd). If no such path exists, print −1.
+
+Input:
+The first line contains two integers N,M(2≤N≤2×10^5,1≤M≤3×10^5) — the number of vertices, total number of edges.
+The second line contains M integers u1,u2,u3…um (1≤ui≤N) — where the i-th integer represents the node that is one endpoint of the i-th edge.
+The third line contains M integers v1,v2,v3…vm (1≤vi≤N) — where the i-th integer represents the node that is the other endpoint of the i-th edge.
+The fourth line contains M integers w1,w2,w3…wm (1≤wi≤106) — where the i-th integer represents the weight of the i-th edge.
+The i-th edge of this graph is from the i-th node in the second line to the i-th node in the third line.
+
+Output:
+Print a single integer — the minimum distance from node 1 to node N following the given constraint. If there is no valid path, print -1.
+
+Examples:
+Input:
+4 3
+1 3 2
+4 4 3
+3 4 5
+Output:
+3
+Input:
+6 5
+1 4 1 6 4
+2 1 6 2 6
+3 3 4 3 4
+Output:
+4
+Input:
+2 1
+2
+1
+7
+Output:
+-1
+Input:
+5 7
+1 1 4 5 2 3 2
+4 5 3 4 4 5 3
+3 8 2 6 6 4 3
+Output:
+8
+
+
+
+
+
+F - Shortest Path Revisited
+[Time limit per test3 seconds
+memory limit per test1024 megabytes]
+
+You are given a bidirectional weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges.
+There is a source and a destination. Your task is to find the cost of the second shortest path from the source node to the destination node. If no such path exists, print −1.
+Note: Second shortest path will be strictly greater than the shortest path
+
+Input:
+The first line contains four integers N,M,S,D(2≤N≤2×105,1≤M≤3×105,1≤S,D≤N) — the number of vertices, total number of edges, source, and destination.
+The next M lines will contain three integers ui,vi,wi(1≤ui,vi≤N,1≤wi≤106) — there is an edge between the node ui and the node vi with a weight wi.
+
+Output:
+If a valid path exists from S to D, print the cost of the second shortest path from S to D.
+If no such path exists, print −1.
+
+Examples
+Input:
+4 3 2 3
+2 1 3
+2 3 5
+3 4 3
+Output:
+11
+
+Input:
+6 5 3 4
+1 2 3
+1 4 5
+1 6 2
+2 6 3
+4 6 1
+Output:
+-1
+
+Input:
+2 1 2 2
+2 1 5
+Output:
+10
+
+Input:
+5 7 2 5
+1 5 3
+1 4 2
+5 3 1
+5 4 6
+5 2 5
+3 4 4
+3 2 8
+Output:
+7
