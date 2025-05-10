@@ -475,3 +475,212 @@ Output:
 5
 
 ----------------------------------------------------------LAB - 03----------------------------------------------------------------------
+
+A - Count the Inversion
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+Here is a Pseudocode of the Merge Sort Algorithm.
+def merge(a, b):
+    # write your code here
+    # a and b are two sorted list
+    # merge function will return a sorted list after merging a and b
+
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        mid = len(arr)//2
+        a1 = mergeSort(............)  # write the parameter 
+        a2 = mergeSort(............)  # write the parameter
+        return merge(a1, a2)          # complete the merge function above 
+
+Now, you are given an array A of size N of N distinct integers. It is guaranteed that the array A contains a permutation of integers from 1 to N (i.e., every integer from 1 to N appears exactly once).
+
+Count the number of inversions in the given array.
+Sort the array in non-decreasing order.
+An inversion is a pair (i,j) where i<j and A[i]>A[j].
+
+Input:
+The first line contains an integer N (1≤N≤105) — denoting the length of the list.
+In the next line, there will be N integers a1,a2,a3…an (1≤ai≤N) separated by spaces.
+
+Output:
+In the first line, print the total number of inversions in the given array. In the next line, print the array in non-decreasing order.
+
+Example:
+Input:
+5
+1 2 5 4 3
+Output:
+3
+1 2 3 4 5 
+Input:
+5
+1 2 3 4 5
+Output:
+0
+1 2 3 4 5 
+Input:
+5
+5 4 3 2 1
+Output:
+10
+1 2 3 4 5 
+Input:
+7
+6 4 2 5 7 3 1
+Output:
+14
+1 2 3 4 5 6 7 
+
+Note:
+In the first example, the inversions are pair (3,4),(3,5) and (1,5). In the second example, there are no inversions. In the third example, every pair of i,j where i<j, we have A[i]>A[j]. Hence, All 10 such pairs are inversions.
+
+
+
+
+
+B - Pair Maximization
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+you are given an array A of size N. You have to choose two indices i and j such that 1≤i<j≤N and A[i]+A[j]2 is the maximum possible. Here, we are considering 1-based indexing. Come up with a divide and conquer approach to solve the problem.
+
+Input:
+The first line contains an integer N (2≤N≤105)— denoting the length of the list.
+In the next line, there will be N integers A1,A2,A3…An (−109≤Ai≤109) separated by spaces.
+
+Output:
+Print a single integer - which denotes the maximum possible value of A[i]+A[j]2.
+
+Examples:
+Input:
+5
+4 3 1 5 6
+Output:
+41
+
+Input:
+5
+4 3 1 -9 6
+Output:
+85
+
+
+
+
+
+C - Fast MOD Drift
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+You are given two integers a and b. Calculate abmod107.
+Input:
+The input file contains two integers a (1≤a≤104) and b (1≤b≤1012).
+
+Output:
+Print one integer — the result of abmod107.
+
+Examples:
+Input:
+100 3
+Output:
+85
+Input:
+100 5
+Output:
+99
+Input:
+10000 1000000000000
+Output:
+27
+
+
+
+
+
+D - Fast MOD Drift Revisited
+[time limit per test2.5 seconds
+memory limit per test256 megabytes]
+
+You are given three integers a, n and m. Calculate (a1+a2+…+an)%m.
+Input:
+The first line contains an integer T (1≤T≤105)— total numbers of test cases.
+In each of the next T test cases, there are three integers a (1≤a≤106), n (1≤n≤1012) and (1≤m≤109)
+Output:
+Print one integer — the result of (a1+a2+…+an)%m.
+
+Example:
+Input:
+3
+2 5 1000
+2 9 1000
+1 100 30
+
+Output:
+62
+22
+10
+
+
+
+
+
+E - Ordering Binary Tree
+[Time limit per test1 second
+memory limit per test256 megabytes]
+
+you are given an array A of size N in increasing order. Find an order of these N integers such that, if these integers are inserted into a Binary Search Tree (BST) one by one, the height of the resulting BST is minimized.
+A Binary Search Tree is a binary tree in which each node has at most two children, referred to as the left and right child. For any node, all elements in the left subtree are smaller than the node's value, and all elements in the right subtree are greater than the node's value.
+The height of a Binary Search Tree is defined as the maximum depth among all the nodes in the tree.
+Note: All the elements in the array A are guaranteed to be unique. In other words, Ai≠Aj if i≠j.
+
+Input:
+The first line contains an integer N (1≤N≤105) — denoting the length of the list.
+In the next line, there will be N integers a1,a2,a3…an (1≤ai≤109) in non-descending order separated by spaces.
+
+Output:
+Output the order of the elements such that when inserted into a Binary Search Tree, the height of the tree is minimized. If there are multiple such orders then find any of them.
+
+Example:
+Input:
+5
+1 2 3 4 5
+Output:
+3 1 2 4 5 
+
+
+
+
+
+F - 220 Trees
+[Time limit per test1 second
+memory limit per test256 megabytes]
+There is a Binary Tree with N nodes. You are given the in–order and pre-order traversals of the tree. Your task is to determine the post-order traversal of the tree.
+
+Input:
+The first line contains an integer N (1≤N≤1000) — the number of nodes in the binary tree.
+In the next line, there will be N integers a1,a2,a3…an (1≤ai≤N) separated by spaces – representing the in-order traversal of the tree.
+
+The following line, there will be N integers b1,b2,b3…bn (1≤bi≤N) separated by spaces – representing the pre-order traversal of the tree.
+
+Output:
+Print N space-separated integers representing the post-order traversal of the binary tree.
+
+Example:
+Input:
+5
+4 2 5 1 3
+1 2 4 5 3
+Output:
+4 5 2 3 1 
+
+----------------------------------------------------------LAB - 04----------------------------------------------------------------------
+
+
+
+
+
+
+
